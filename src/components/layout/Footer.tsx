@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { MessageCircle, Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
+import logoWaspeed from "@/assets/logo-waspeed.webp";
 
 const footerLinks = {
   produto: [
@@ -40,13 +41,9 @@ export function Footer() {
     <footer className="bg-card border-t border-border">
       <div className="container-custom py-12 md:py-16">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
-          {/* Brand Column */}
           <div className="col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <MessageCircle className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-foreground">WaSpeed</span>
+            <Link to="/" className="inline-block mb-4">
+              <img src={logoWaspeed} alt="WaSpeed" className="h-10" />
             </Link>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">
               Automatize seu atendimento via WhatsApp e aumente suas vendas com a plataforma mais completa do mercado.

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logoWaspeed from "@/assets/logo-waspeed.webp";
 
 const navLinks = [
   { href: "/recursos", label: "Recursos" },
@@ -20,11 +21,8 @@ export function Navbar() {
       <nav className="container-custom">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <MessageCircle className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">WaSpeed</span>
+          <Link to="/" className="flex items-center">
+            <img src={logoWaspeed} alt="WaSpeed" className="h-8 md:h-10" />
           </Link>
 
           {/* Desktop Navigation */}
