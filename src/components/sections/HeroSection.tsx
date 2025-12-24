@@ -44,7 +44,7 @@ export function HeroSection() {
 
           {/* Trust text */}
           <p className="text-sm text-muted-foreground animate-slide-up" style={{ animationDelay: "0.4s" }}>
-            ✓ Teste grátis por 7 dias &nbsp;•&nbsp; ✓ Sem cartão de crédito &nbsp;•&nbsp; ✓ Cancele quando quiser
+            ✓ Todas as funcionalidades liberadas para teste &nbsp;•&nbsp; ✓ Sem cartão de crédito &nbsp;•&nbsp; ✓ Desinstale quando quiser
           </p>
         </div>
 

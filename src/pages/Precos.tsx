@@ -6,70 +6,77 @@ import { Check, X } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter",
-    price: "R$ 97",
-    description: "Ideal para quem está começando",
+    name: "Licença gratuita",
     features: [
-      "1 número de WhatsApp",
-      "2 atendentes",
-      "1.000 mensagens/mês",
-      "ChatBot básico",
-      "Etiquetas ilimitadas",
-      "Respostas rápidas",
-      "Suporte por email",
+      { text: "Envios em massa", limited: true },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: true },
+      { text: "Criação de funis automáticos em um clique", limited: true },
+      { text: "Fluxo de chatbot", limited: true },
+      { text: "Respostas automáticas simples e intuitivas", limited: true },
+      { text: "Publicação automática de status", limited: true },
+      { text: "Organização por etiquetas e marcações", limited: true },
+      { text: "Agendamento de mensagens", limited: true },
+      { text: "Atendimento de segunda a sábado" },
     ],
     highlighted: false,
+    ctaText: "Testar agora",
+    footnote: "* Uso limitado, apenas demonstração.",
   },
   {
-    name: "Profissional",
-    price: "R$ 197",
-    description: "Para empresas em crescimento",
+    name: "Licença Prata",
+    icon: "🥈",
     features: [
-      "3 números de WhatsApp",
-      "10 atendentes",
-      "10.000 mensagens/mês",
-      "ChatBot avançado com IA",
-      "Funil de vendas completo",
-      "Disparo em massa",
-      "Relatórios avançados",
-      "Integrações via API",
-      "Suporte prioritário",
+      { text: "Envios em massa", limited: false },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
+      { text: "Criação de funis automáticos em um clique", limited: false },
+      { text: "Fluxo de chatbot", limited: false },
+      { text: "Respostas automáticas simples e intuitivas", limited: false },
+      { text: "Publicação automática de status", limited: false },
+      { text: "Organização por etiquetas e marcações", limited: false },
+      { text: "Agendamento de mensagens", limited: false },
+      { text: "Atendimento de segunda a sábado" },
+      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
+      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
+      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
+    ],
+    highlighted: false,
+    ctaText: "Comprar Agora",
+  },
+  {
+    name: "Licença Ouro",
+    icon: "🥇",
+    features: [
+      { text: "Envios em massa", limited: false },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
+      { text: "Criação de funis automáticos em um clique", limited: false },
+      { text: "Fluxo de chatbot", limited: false },
+      { text: "Respostas automáticas simples e intuitivas", limited: false },
+      { text: "Publicação automática de status", limited: false },
+      { text: "Organização por etiquetas e marcações", limited: false },
+      { text: "Agendamento de mensagens", limited: false },
+      { text: "Atendimento de segunda a sábado" },
+      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
+      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
+      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
     ],
     highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    price: "R$ 397",
-    description: "Para grandes operações",
-    features: [
-      "Números ilimitados",
-      "Atendentes ilimitados",
-      "Mensagens ilimitadas",
-      "Todas as funcionalidades",
-      "API completa",
-      "Webhooks em tempo real",
-      "Gerente de conta dedicado",
-      "SLA garantido 99.9%",
-      "Treinamento da equipe",
-      "Suporte 24/7",
-    ],
-    highlighted: false,
+    ctaText: "Comprar Agora",
+    footnote: "* Os bônus são liberados automaticamente após o período de garantia de 7 dias, para proteção do conteúdo digital.",
   },
 ];
 
 const comparisonFeatures = [
-  { name: "Números de WhatsApp", starter: "1", pro: "3", enterprise: "Ilimitado" },
-  { name: "Atendentes", starter: "2", pro: "10", enterprise: "Ilimitado" },
-  { name: "Mensagens/mês", starter: "1.000", pro: "10.000", enterprise: "Ilimitado" },
-  { name: "ChatBot", starter: "Básico", pro: "Avançado com IA", enterprise: "Avançado com IA" },
-  { name: "Funil de vendas", starter: false, pro: true, enterprise: true },
-  { name: "Disparo em massa", starter: false, pro: true, enterprise: true },
-  { name: "Relatórios avançados", starter: false, pro: true, enterprise: true },
-  { name: "API e Webhooks", starter: false, pro: true, enterprise: true },
-  { name: "Integrações nativas", starter: false, pro: true, enterprise: true },
-  { name: "Gerente de conta", starter: false, pro: false, enterprise: true },
-  { name: "SLA garantido", starter: false, pro: false, enterprise: true },
-  { name: "Suporte", starter: "Email", pro: "Prioritário", enterprise: "24/7" },
+  { name: "Envios em massa", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Envio de mensagens multimídia", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Funis automáticos", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Fluxo de chatbot", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Respostas automáticas", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Publicação de status", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Etiquetas e marcações", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Agendamento de mensagens", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
+  { name: "Bônus Scripts e Fluxos", starter: false, pro: true, enterprise: true },
+  { name: "Bônus E-books Exclusivos", starter: false, pro: true, enterprise: true },
+  { name: "Suporte", starter: "Segunda a sábado", pro: "Segunda a sábado", enterprise: "Segunda a sábado" },
 ];
 
 function ComparisonValue({ value }: { value: boolean | string }) {
@@ -92,7 +99,7 @@ export default function PrecosPage() {
           <SectionHeader
             badge="Preços"
             title="Planos que cabem no seu bolso"
-            description="Escolha o plano ideal para o seu negócio. Todos incluem teste grátis de 7 dias."
+            description="Escolha o plano ideal para o seu negócio. Todas as funcionalidades liberadas para teste."
           />
         </div>
       </section>
@@ -105,10 +112,11 @@ export default function PrecosPage() {
               <PricingCard
                 key={plan.name}
                 name={plan.name}
-                price={plan.price}
-                description={plan.description}
+                icon={plan.icon}
                 features={plan.features}
                 highlighted={plan.highlighted}
+                ctaText={plan.ctaText}
+                footnote={plan.footnote}
               />
             ))}
           </div>
@@ -128,9 +136,9 @@ export default function PrecosPage() {
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left py-4 px-4 font-medium text-muted-foreground">Funcionalidade</th>
-                  <th className="text-center py-4 px-4 font-medium text-foreground">Starter</th>
-                  <th className="text-center py-4 px-4 font-medium text-primary">Profissional</th>
-                  <th className="text-center py-4 px-4 font-medium text-foreground">Enterprise</th>
+                  <th className="text-center py-4 px-4 font-medium text-foreground">Gratuita</th>
+                  <th className="text-center py-4 px-4 font-medium text-foreground">Prata</th>
+                  <th className="text-center py-4 px-4 font-medium text-primary">Ouro</th>
                 </tr>
               </thead>
               <tbody>
@@ -140,10 +148,10 @@ export default function PrecosPage() {
                     <td className="py-4 px-4 text-center">
                       <ComparisonValue value={feature.starter} />
                     </td>
-                    <td className="py-4 px-4 text-center bg-accent/30">
+                    <td className="py-4 px-4 text-center">
                       <ComparisonValue value={feature.pro} />
                     </td>
-                    <td className="py-4 px-4 text-center">
+                    <td className="py-4 px-4 text-center bg-accent/30">
                       <ComparisonValue value={feature.enterprise} />
                     </td>
                   </tr>
