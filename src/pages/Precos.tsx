@@ -23,26 +23,6 @@ const plans = [
     footnote: "* Uso limitado, apenas demonstração.",
   },
   {
-    name: "Licença Prata",
-    icon: "🥈",
-    features: [
-      { text: "Envios em massa", limited: false },
-      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
-      { text: "Criação de funis automáticos em um clique", limited: false },
-      { text: "Fluxo de chatbot", limited: false },
-      { text: "Respostas automáticas simples e intuitivas", limited: false },
-      { text: "Publicação automática de status", limited: false },
-      { text: "Organização por etiquetas e marcações", limited: false },
-      { text: "Agendamento de mensagens", limited: false },
-      { text: "Atendimento de segunda a sábado" },
-      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
-      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
-      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
-    ],
-    highlighted: false,
-    ctaText: "Comprar Agora",
-  },
-  {
     name: "Licença Ouro",
     icon: "🥇",
     features: [
@@ -63,6 +43,23 @@ const plans = [
     ctaText: "Comprar Agora",
     footnote: "* Os bônus são liberados automaticamente após o período de garantia de 7 dias, para proteção do conteúdo digital.",
   },
+  {
+    name: "Licença Prata",
+    icon: "🥈",
+    features: [
+      { text: "Envios em massa", limited: false },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
+      { text: "Criação de funis automáticos em um clique", limited: false },
+      { text: "Fluxo de chatbot", limited: false },
+      { text: "Respostas automáticas simples e intuitivas", limited: false },
+      { text: "Publicação automática de status", limited: false },
+      { text: "Organização por etiquetas e marcações", limited: false },
+      { text: "Agendamento de mensagens", limited: false },
+      { text: "Atendimento de segunda a sábado" },
+    ],
+    highlighted: false,
+    ctaText: "Comprar Agora",
+  },
 ];
 
 const comparisonFeatures = [
@@ -74,8 +71,8 @@ const comparisonFeatures = [
   { name: "Publicação de status", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
   { name: "Etiquetas e marcações", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
   { name: "Agendamento de mensagens", starter: "Limitado", pro: "Ilimitado", enterprise: "Ilimitado" },
-  { name: "Bônus Scripts e Fluxos", starter: false, pro: true, enterprise: true },
-  { name: "Bônus E-books Exclusivos", starter: false, pro: true, enterprise: true },
+  { name: "Bônus Scripts e Fluxos", starter: false, pro: true, enterprise: false },
+  { name: "Bônus E-books Exclusivos", starter: false, pro: true, enterprise: false },
   { name: "Suporte", starter: "Segunda a sábado", pro: "Segunda a sábado", enterprise: "Segunda a sábado" },
 ];
 
@@ -94,7 +91,7 @@ export default function PrecosPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-custom">
           <SectionHeader
             badge="Preços"
@@ -107,7 +104,7 @@ export default function PrecosPage() {
       {/* Pricing Cards */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
             {plans.map((plan) => (
               <PricingCard
                 key={plan.name}
@@ -137,8 +134,8 @@ export default function PrecosPage() {
                 <tr className="border-b border-border">
                   <th className="text-left py-4 px-4 font-medium text-muted-foreground">Funcionalidade</th>
                   <th className="text-center py-4 px-4 font-medium text-foreground">Gratuita</th>
-                  <th className="text-center py-4 px-4 font-medium text-foreground">Prata</th>
                   <th className="text-center py-4 px-4 font-medium text-primary">Ouro</th>
+                  <th className="text-center py-4 px-4 font-medium text-foreground">Prata</th>
                 </tr>
               </thead>
               <tbody>
@@ -148,10 +145,10 @@ export default function PrecosPage() {
                     <td className="py-4 px-4 text-center">
                       <ComparisonValue value={feature.starter} />
                     </td>
-                    <td className="py-4 px-4 text-center">
+                    <td className="py-4 px-4 text-center bg-primary/5">
                       <ComparisonValue value={feature.pro} />
                     </td>
-                    <td className="py-4 px-4 text-center bg-accent/30">
+                    <td className="py-4 px-4 text-center">
                       <ComparisonValue value={feature.enterprise} />
                     </td>
                   </tr>
