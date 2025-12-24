@@ -20,26 +20,6 @@ const plans = [
     footnote: "* Uso limitado, apenas demonstração.",
   },
   {
-    name: "Licença Prata",
-    icon: "🥈",
-    features: [
-      { text: "Envios em massa", limited: false },
-      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
-      { text: "Criação de funis automáticos em um clique", limited: false },
-      { text: "Fluxo de chatbot", limited: false },
-      { text: "Respostas automáticas simples e intuitivas", limited: false },
-      { text: "Publicação automática de status", limited: false },
-      { text: "Organização por etiquetas e marcações", limited: false },
-      { text: "Agendamento de mensagens", limited: false },
-      { text: "Atendimento de segunda a sábado" },
-      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
-      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
-      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
-    ],
-    highlighted: false,
-    ctaText: "Comprar Agora",
-  },
-  {
     name: "Licença Ouro",
     icon: "🥇",
     features: [
@@ -60,11 +40,28 @@ const plans = [
     ctaText: "Comprar Agora",
     footnote: "* Os bônus são liberados automaticamente após o período de garantia de 7 dias, para proteção do conteúdo digital.",
   },
+  {
+    name: "Licença Prata",
+    icon: "🥈",
+    features: [
+      { text: "Envios em massa", limited: false },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
+      { text: "Criação de funis automáticos em um clique", limited: false },
+      { text: "Fluxo de chatbot", limited: false },
+      { text: "Respostas automáticas simples e intuitivas", limited: false },
+      { text: "Publicação automática de status", limited: false },
+      { text: "Organização por etiquetas e marcações", limited: false },
+      { text: "Agendamento de mensagens", limited: false },
+      { text: "Atendimento de segunda a sábado" },
+    ],
+    highlighted: false,
+    ctaText: "Comprar Agora",
+  },
 ];
 
 export function PricingSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-gradient-to-b from-background to-secondary/20">
       <div className="container-custom">
         <SectionHeader
           badge="Preços"
@@ -72,7 +69,7 @@ export function PricingSection() {
           description="Planos flexíveis que crescem com o seu negócio."
         />
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
           {plans.map((plan) => (
             <PricingCard
               key={plan.name}
