@@ -44,10 +44,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex md:items-center md:gap-4">
-            <Button variant="ghost" size="sm" asChild>
-              <Link to="/contato">Fale Conosco</Link>
-            </Button>
+          <div className="hidden md:flex md:items-center">
             <Button variant="hero" size="sm" asChild>
               <Link to="/contato">Começar Agora</Link>
             </Button>
@@ -87,11 +84,6 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="outline" asChild>
-                  <Link to="/contato" onClick={() => setIsOpen(false)}>
-                    Fale Conosco
-                  </Link>
-                </Button>
                 <Button variant="hero" asChild>
                   <Link to="/contato" onClick={() => setIsOpen(false)}>
                     Começar Agora

@@ -3,26 +3,30 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
+interface PricingFeature {
+  text: string;
+  limited?: boolean;
+  isBonus?: boolean;
+}
+
 interface PricingCardProps {
   name: string;
-  price: string;
-  period?: string;
-  description: string;
-  features: string[];
+  icon?: string;
+  features: PricingFeature[];
   highlighted?: boolean;
   ctaText?: string;
   ctaHref?: string;
+  footnote?: string;
 }
 
 export function PricingCard({
   name,
-  price,
-  period = "/mês",
-  description,
+  icon,
   features,
   highlighted = false,
   ctaText = "Começar agora",
   ctaHref = "/contato",
+  footnote,
 }: PricingCardProps) {
   return (
     <div
@@ -32,31 +36,40 @@ export function PricingCard({
       )}
     >
       {highlighted && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-sm font-medium">
-          Mais Popular
+        <div className="absolute -top-4 right-4 px-4 py-1 rounded-full bg-green-500 text-white text-sm font-medium">
+          Mais escolhida
         </div>
       )}
 
       <div className="mb-6">
-        <h3 className="text-lg font-semibold text-foreground mb-2">{name}</h3>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </div>
-
-      <div className="mb-6">
-        <span className="text-4xl font-bold text-foreground">{price}</span>
-        <span className="text-muted-foreground">{period}</span>
+        <h3 className="text-xl font-semibold text-foreground flex items-center gap-2">
+          {icon && <span>{icon}</span>}
+          {name}
+        </h3>
       </div>
 
       <ul className="space-y-3 mb-8 flex-1">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
-            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent">
-              <Check className="h-3 w-3 text-primary" />
+            <div className="flex h-5 w-5 shrink-0 items-center justify-center">
+              <Check className={cn("h-4 w-4", feature.isBonus ? "text-primary" : "text-primary")} />
             </div>
-            <span className="text-sm text-muted-foreground">{feature}</span>
+            <span className={cn("text-sm", feature.isBonus ? "text-foreground font-medium" : "text-foreground")}>
+              {feature.text}
+              {feature.limited !== undefined && (
+                <span className={cn("ml-1", feature.limited ? "text-red-500" : "text-primary")}>
+                  ({feature.limited ? "LIMITADO" : "ILIMITADO"})
+                </span>
+              )}
+              {feature.isBonus && "*"}
+            </span>
           </li>
         ))}
       </ul>
+
+      {footnote && (
+        <p className="text-xs text-muted-foreground mb-4 italic">{footnote}</p>
+      )}
 
       <Button
         variant={highlighted ? "hero" : "outline"}

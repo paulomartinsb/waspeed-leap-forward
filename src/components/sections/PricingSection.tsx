@@ -3,50 +3,62 @@ import { PricingCard } from "@/components/ui/PricingCard";
 
 const plans = [
   {
-    name: "Starter",
-    price: "R$ 97",
-    description: "Ideal para quem está começando",
+    name: "Licença gratuita",
     features: [
-      "1 número de WhatsApp",
-      "2 atendentes",
-      "1.000 mensagens/mês",
-      "ChatBot básico",
-      "Etiquetas ilimitadas",
-      "Suporte por email",
+      { text: "Envios em massa", limited: true },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: true },
+      { text: "Criação de funis automáticos em um clique", limited: true },
+      { text: "Fluxo de chatbot", limited: true },
+      { text: "Respostas automáticas simples e intuitivas", limited: true },
+      { text: "Publicação automática de status", limited: true },
+      { text: "Organização por etiquetas e marcações", limited: true },
+      { text: "Agendamento de mensagens", limited: true },
+      { text: "Atendimento de segunda a sábado" },
     ],
     highlighted: false,
+    ctaText: "Testar agora",
+    footnote: "* Uso limitado, apenas demonstração.",
   },
   {
-    name: "Profissional",
-    price: "R$ 197",
-    description: "Para empresas em crescimento",
+    name: "Licença Prata",
+    icon: "🥈",
     features: [
-      "3 números de WhatsApp",
-      "10 atendentes",
-      "10.000 mensagens/mês",
-      "ChatBot avançado com IA",
-      "Funil de vendas completo",
-      "Disparo em massa",
-      "Relatórios avançados",
-      "Suporte prioritário",
+      { text: "Envios em massa", limited: false },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
+      { text: "Criação de funis automáticos em um clique", limited: false },
+      { text: "Fluxo de chatbot", limited: false },
+      { text: "Respostas automáticas simples e intuitivas", limited: false },
+      { text: "Publicação automática de status", limited: false },
+      { text: "Organização por etiquetas e marcações", limited: false },
+      { text: "Agendamento de mensagens", limited: false },
+      { text: "Atendimento de segunda a sábado" },
+      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
+      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
+      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
+    ],
+    highlighted: false,
+    ctaText: "Comprar Agora",
+  },
+  {
+    name: "Licença Ouro",
+    icon: "🥇",
+    features: [
+      { text: "Envios em massa", limited: false },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", limited: false },
+      { text: "Criação de funis automáticos em um clique", limited: false },
+      { text: "Fluxo de chatbot", limited: false },
+      { text: "Respostas automáticas simples e intuitivas", limited: false },
+      { text: "Publicação automática de status", limited: false },
+      { text: "Organização por etiquetas e marcações", limited: false },
+      { text: "Agendamento de mensagens", limited: false },
+      { text: "Atendimento de segunda a sábado" },
+      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
+      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
+      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
     ],
     highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    price: "R$ 397",
-    description: "Para grandes operações",
-    features: [
-      "Números ilimitados",
-      "Atendentes ilimitados",
-      "Mensagens ilimitadas",
-      "API completa",
-      "Integrações avançadas",
-      "Gerente de conta dedicado",
-      "SLA garantido",
-      "Treinamento da equipe",
-    ],
-    highlighted: false,
+    ctaText: "Comprar Agora",
+    footnote: "* Os bônus são liberados automaticamente após o período de garantia de 7 dias, para proteção do conteúdo digital.",
   },
 ];
 
@@ -57,7 +69,7 @@ export function PricingSection() {
         <SectionHeader
           badge="Preços"
           title="Escolha o plano ideal para você"
-          description="Planos flexíveis que crescem com o seu negócio. Teste grátis por 7 dias."
+          description="Planos flexíveis que crescem com o seu negócio."
         />
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -65,10 +77,11 @@ export function PricingSection() {
             <PricingCard
               key={plan.name}
               name={plan.name}
-              price={plan.price}
-              description={plan.description}
+              icon={plan.icon}
               features={plan.features}
               highlighted={plan.highlighted}
+              ctaText={plan.ctaText}
+              footnote={plan.footnote}
             />
           ))}
         </div>
