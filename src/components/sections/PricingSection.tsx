@@ -24,28 +24,6 @@ const plans = [
     footnote: "* Uso limitado, apenas demonstração.",
   },
   {
-    id: "silver",
-    name: "Licença Prata",
-    icon: "🥈",
-    features: [
-      { text: "Envios em massa", tag: "ILIMITADO" },
-      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", tag: "ILIMITADO" },
-      { text: "Criação de funis automáticos em um clique", tag: "ILIMITADO" },
-      { text: "Fluxo de chatbot", tag: "ILIMITADO" },
-      { text: "Respostas automáticas simples e intuitivas", tag: "ILIMITADO" },
-      { text: "Publicação automática de status", tag: "ILIMITADO" },
-      { text: "Organização por etiquetas e marcações", tag: "ILIMITADO" },
-      { text: "Agendamento de mensagens", tag: "ILIMITADO" },
-      { text: "Atendimento de segunda a sábado" },
-      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
-      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
-      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
-    ],
-    ctaText: "Comprar Agora",
-    ctaHref: "/contato",
-    highlighted: false,
-  },
-  {
     id: "gold",
     name: "Licença Ouro",
     icon: "🥇",
@@ -67,6 +45,28 @@ const plans = [
     ctaHref: "/contato",
     highlighted: true,
     footnote: "* Os bônus são liberados automaticamente após o período de garantia de 7 dias, para proteção do conteúdo digital.",
+  },
+  {
+    id: "silver",
+    name: "Licença Prata",
+    icon: "🥈",
+    features: [
+      { text: "Envios em massa", tag: "ILIMITADO" },
+      { text: "Envio de mensagens em texto, áudio, imagem, vídeo e documentos", tag: "ILIMITADO" },
+      { text: "Criação de funis automáticos em um clique", tag: "ILIMITADO" },
+      { text: "Fluxo de chatbot", tag: "ILIMITADO" },
+      { text: "Respostas automáticas simples e intuitivas", tag: "ILIMITADO" },
+      { text: "Publicação automática de status", tag: "ILIMITADO" },
+      { text: "Organização por etiquetas e marcações", tag: "ILIMITADO" },
+      { text: "Agendamento de mensagens", tag: "ILIMITADO" },
+      { text: "Atendimento de segunda a sábado" },
+      { text: "Bônus 19 Scripts Prontos e Validados", isBonus: true },
+      { text: "Bônus 19 Fluxos de Bot Prontos", isBonus: true },
+      { text: "Bônus Todos os nossos E-books Exclusivos de Atendimento e Vendas", isBonus: true },
+    ],
+    ctaText: "Comprar Agora",
+    ctaHref: "/contato",
+    highlighted: false,
   },
 ];
 
@@ -96,7 +96,7 @@ export function PricingSection() {
               className={cn(
                 "relative flex flex-col rounded-2xl border bg-card p-6 lg:p-8 transition-all duration-300",
                 plan.highlighted
-                  ? "border-primary shadow-2xl shadow-primary/10"
+                  ? "border-primary shadow-2xl shadow-primary/20 scale-[1.02] md:scale-105 z-10 -my-4"
                   : "border-border hover:border-primary/50 hover:shadow-xl"
               )}
               style={{ animationDelay: `${index * 0.1}s` }}
