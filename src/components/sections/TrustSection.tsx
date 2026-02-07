@@ -1,10 +1,17 @@
+import trustLogo1 from "@/assets/trust-logo-1.png";
+import trustLogo2 from "@/assets/trust-logo-2.png";
+import trustLogo3 from "@/assets/trust-logo-3.png";
+import trustLogo4 from "@/assets/trust-logo-4.png";
+import trustLogo5 from "@/assets/trust-logo-5.png";
+import trustLogo6 from "@/assets/trust-logo-6.png";
+
 const trustLogos = [
-  { name: "Empresa 1", placeholder: true },
-  { name: "Empresa 2", placeholder: true },
-  { name: "Empresa 3", placeholder: true },
-  { name: "Empresa 4", placeholder: true },
-  { name: "Empresa 5", placeholder: true },
-  { name: "Empresa 6", placeholder: true },
+  { name: "Empresa 1", src: trustLogo1 },
+  { name: "Empresa 2", src: trustLogo2 },
+  { name: "Empresa 3", src: trustLogo3 },
+  { name: "Empresa 4", src: trustLogo4 },
+  { name: "Empresa 5", src: trustLogo5 },
+  { name: "Empresa 6", src: trustLogo6 },
 ];
 
 export function TrustSection() {
@@ -17,12 +24,12 @@ export function TrustSection() {
         
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
           {trustLogos.map((logo, index) => (
-            <div
+            <img
               key={index}
-              className="h-8 w-24 md:w-32 bg-muted rounded flex items-center justify-center text-xs text-muted-foreground"
-            >
-              {logo.name}
-            </div>
+              src={logo.src}
+              alt={logo.name}
+              className="h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            />
           ))}
         </div>
       </div>
